@@ -14,16 +14,16 @@ class DemoApplicationTests {
 	@Autowired
 	private EmployeeDao employeeDao;
 
-	//	@Test
+	@Test
 	void contextLoads() {
 		Employee employee = new Employee();
-		employee.setName("Bruce Wayne");
-		employee.setLocation("Building-X");
-		employee.setBranch("Security");
+		employee.setName("Genuine coder");
+		employee.setLocation("Building-6");
+		employee.setBranch("IT");
 		employeeDao.save(employee);
 	}
 
-	@Test
+	//	@Test
 	void getAllEmployeesAndDeleteThem() {
 		List<Employee> employees = employeeDao.getAllEmployees();
 		employees.forEach(employee -> {
