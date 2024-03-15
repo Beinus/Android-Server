@@ -1,7 +1,7 @@
 package com.example.chatserver;
 
-import com.example.chatserver.model.employee.Employee;
-import com.example.chatserver.model.employee.EmployeeDao;
+import com.example.chatserver.model.user.User;
+import com.example.chatserver.model.user.UserDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,22 +12,21 @@ import java.util.List;
 class DemoApplicationTests {
 
 	@Autowired
-	private EmployeeDao employeeDao;
+	private UserDao userDao;
 
 	@Test
 	void contextLoads() {
-		Employee employee = new Employee();
-		employee.setName("Genuine coder");
-		employee.setLocation("Building-6");
-		employee.setBranch("IT");
-		employeeDao.save(employee);
+		User user = new User();
+		user.setUserID("Android");
+		user.setUserPW("Android1");
+		userDao.save(user);
 	}
 
 	//	@Test
 	void getAllEmployeesAndDeleteThem() {
-		List<Employee> employees = employeeDao.getAllEmployees();
-		employees.forEach(employee -> {
-			employeeDao.delete(employee);
+		List<User> users = userDao.getAllUsers();
+		users.forEach(user -> {
+			userDao.delete(user);
 		});
 	}
 }
