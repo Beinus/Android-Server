@@ -8,12 +8,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserDao {
+public class UserService {
     @Autowired
     private UserRepository repository;
 
     public User save(User user) {
+        user.setStatus(Status.ONLINE);
         return repository.save(user);
+    }
+
+    public void disconnect(User user) {
+        var storedUser = repository.findById(user.getUserID())
+                .orElse(null);
+        if (storedUser != null) {
+           storedUser.setStatus(Status.OFFLINE);
+           repository.save(storedUser);
+        }
+    }
+
+    public List<User> findConnectedUsers() {
+        return repository.findAllByStatus(Status.ONLINE);
     }
 
     public List<User> getAllUsers() {

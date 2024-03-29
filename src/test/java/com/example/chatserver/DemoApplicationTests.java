@@ -1,7 +1,7 @@
 package com.example.chatserver;
 
 import com.example.chatserver.model.user.User;
-import com.example.chatserver.model.user.UserDao;
+import com.example.chatserver.model.user.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +12,7 @@ import java.util.List;
 class DemoApplicationTests {
 
 	@Autowired
-	private UserDao userDao;
+	private UserService userDao;
 
 	@Test
 	void contextLoads() {

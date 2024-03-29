@@ -1,24 +1,16 @@
 package com.example.chatserver.model.user;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
     private String userID;
     private String userPW;
+    private Status status;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public User() {
     }
 
     public String getUserID() {
@@ -37,12 +29,20 @@ public class User {
         this.userPW = userPW;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", userID='" + userID + '\'' +
+                "userID='" + userID + '\'' +
                 ", userPW='" + userPW + '\'' +
+                ", status=" + status +
                 '}';
     }
 }

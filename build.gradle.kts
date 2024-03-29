@@ -23,6 +23,12 @@ dependencies {
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	implementation("mysql:mysql-connector-java:8.0.33")
 
+	// https://mvnrepository.com/artifact/org.springframework/spring-websocket
+	implementation("org.springframework:spring-websocket:6.1.4")
+
+	// https://mvnrepository.com/artifact/org.springframework/spring-messaging
+	implementation("org.springframework:spring-messaging:6.1.4")
+
 }
 
 tasks.withType<Test> {
